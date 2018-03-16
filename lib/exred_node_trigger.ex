@@ -22,13 +22,14 @@ defmodule Exred.Node.Trigger do
   """
 
   @name "Trigger"
-  @category "function"
+  @category "output"
   @info @moduledoc
   @config %{
     name: %{value: @name, type: "string", attrs: %{max: 15} },
     interval: %{value: 0, type: "number", attrs: %{min: 0, max: 3600}},
     payload: %{value: "timeout", type: "string", attrs: %{max: 20}}
   }
+  @ui_attributes %{fire_button: true, right_icon: "send"}
 
   use Exred.Library.NodePrototype
 
