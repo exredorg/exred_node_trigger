@@ -35,7 +35,7 @@ defmodule Exred.Node.Trigger do
 
   @impl true
   def node_init(state) do
-    msg = %{payload: state.config.payload.value}
+    msg = {:exred_msg, %{payload: state.config.payload.value}}
     if state.config.interval.value > 0, do: Process.send_after self(), msg, state.config.interval.value
     Map.put(state, :msg, msg)
   end
