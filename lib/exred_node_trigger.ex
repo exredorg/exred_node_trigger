@@ -22,7 +22,7 @@ defmodule Exred.Node.Trigger do
   """
 
   @name "Trigger"
-  @category "output"
+  @category "input"
   @info @moduledoc
   @config %{
     name: %{value: @name, type: "string", attrs: %{max: 15} },
