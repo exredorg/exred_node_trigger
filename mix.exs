@@ -1,12 +1,16 @@
 defmodule Exred.Node.Trigger.Mixfile do
   use Mix.Project
 
+  @description "Triggers execution of other nodes by sending a configurable message"
+
   def project do
     [
       app: :exred_node_trigger,
       version: "0.1.3",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
+      description: @description,
+      package: package(),
       deps: deps()
     ]
   end
@@ -25,7 +29,7 @@ defmodule Exred.Node.Trigger.Mixfile do
       {:ex_doc, "~> 0.18.0", only: :dev, runtime: false}
     ]
   end
-  
+
   defp package do
     %{
       licenses: ["MIT"],
