@@ -2,13 +2,14 @@ defmodule Exred.Node.Trigger.Mixfile do
   use Mix.Project
 
   @description "Triggers execution of other nodes by sending a configurable message"
+  @version File.read!("VERSION") |> String.trim()
 
   def project do
     [
       app: :exred_node_trigger,
-      version: "0.1.3",
+      version: @version,
       elixir: "~> 1.5",
-      start_permanent: Mix.env == :prod,
+      start_permanent: Mix.env() == :prod,
       description: @description,
       package: package(),
       deps: deps()
@@ -25,8 +26,8 @@ defmodule Exred.Node.Trigger.Mixfile do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:exred_library, "~> 0.1.11"},
-      {:ex_doc, "~> 0.18.0", only: :dev, runtime: false}
+      {:exred_nodeprototype, "~> 0.1"},
+      {:ex_doc, "~> 0.19.0", only: :dev, runtime: false}
     ]
   end
 
@@ -35,7 +36,7 @@ defmodule Exred.Node.Trigger.Mixfile do
       licenses: ["MIT"],
       maintainers: ["Zsolt Keszthelyi"],
       links: %{
-        "GitHub" => "https://github.com/exredorg/exred_node_trigger",
+        "GitHub" => "https://github.com/exredorg/exred_node_trigger.git",
         "Exred" => "http://exred.org"
       },
       files: ["lib", "mix.exs", "README.md", "LICENSE"]
