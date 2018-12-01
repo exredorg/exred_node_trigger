@@ -39,7 +39,7 @@ defmodule Exred.Node.Trigger.Mixfile do
         "GitHub" => "https://github.com/exredorg/exred_node_trigger.git",
         "Exred" => "http://exred.org"
       },
-      files: ["lib", "mix.exs", "README.md", "LICENSE"]
+      files: ["lib", "mix.exs", "README.md", "LICENSE", "VERSION"]
     }
   end
 end
